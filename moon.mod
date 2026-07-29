@@ -15,12 +15,12 @@ version = "0.1.0"
 
 readme = "README.mbt.md"
 
-repository = ""
+repository = "https://github.com/2515050243qyf/moonbit-geofield"
 
 license = "Apache-2.0"
 
-keywords = []
+keywords = ["geophysics", "gravity", "magnetic", "geojson", "grid"]
 
 preferred_target = "wasm-gc"
 
-description = ""
+description = "MoonBit geophysical field toolkit for gravity, magnetic field, gridded data, profiles, CSV and GeoJSON."
