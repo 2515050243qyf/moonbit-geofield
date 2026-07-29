@@ -14,7 +14,7 @@ jobs:
       - name: Setup MoonBit
         uses: hustcer/setup-moonbit@v1
         with:
-          version: 0.10.3
+          version: latest
 
       - name: Run demo command
         run: moon run cmd/main
