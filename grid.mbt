@@ -39,6 +39,11 @@ pub fn Grid::sample_bilinear(self : Grid, point : GeoPoint) -> Double? {
   let (r, c) = grid_position(self, point)
   let r0 = r.floor().to_int()
   let c0 = c.floor().to_int()
+  if r0 < 0 || c0 < 0 || r0 >= self.rows || c0 >= self.cols {
+    None
+  } else if r0 == self.rows - 1 || c0 == self.cols - 1 {
+    self.value_at(r0, c0)
+  } else {
   let r1 = r0 + 1
   let c1 = c0 + 1
   match (
@@ -55,6 +60,7 @@ pub fn Grid::sample_bilinear(self : Grid, point : GeoPoint) -> Double? {
       Some(lerp(a, b, tr))
     }
     _ => None
+  }
   }
 }
 
