@@ -5,7 +5,9 @@ fn main {
   let station = @geofield.GeoPoint::{ lat: 32.0, lon: 118.0, elevation_m: 25.0 }
   let normal = @geofield.normal_gravity_mgal(station.lat)
   let declination = @geofield.magnetic_declination_deg(station.lat, station.lon)
-  println("station: lat=\{station.lat}, lon=\{station.lon}, h=\{station.elevation_m}m")
+  println(
+    "station: lat=\{station.lat}, lon=\{station.lon}, h=\{station.elevation_m}m",
+  )
   println("normal gravity: \{normal} mGal")
   println("magnetic declination estimate: \{declination} deg")
   let grid = @geofield.make_grid(

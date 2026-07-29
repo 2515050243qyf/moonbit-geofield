@@ -19,7 +19,7 @@ repository = "https://github.com/2515050243qyf/moonbit-geofield"
 
 license = "Apache-2.0"
 
-keywords = ["geophysics", "gravity", "magnetic", "geojson", "grid"]
+keywords = [ "geophysics", "gravity", "magnetic", "geojson", "grid" ]
 
 preferred_target = "wasm-gc"
 

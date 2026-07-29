@@ -1,0 +1,107 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "2515050243qyf/moonbit-geofield"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn bouguer_anomaly_mgal(Double, Double, Double, density_kg_m3? : Double) -> Double
+
+pub fn bouguer_slab_correction_mgal(Double, density_kg_m3? : Double) -> Double
+
+pub fn clamp_latitude(Double) -> Double
+
+pub fn deg_to_rad(Double) -> Double
+
+pub fn empty_harmonic_model(scale? : Double) -> SphericalHarmonicModel
+
+pub fn evaluate_spherical_harmonic(SphericalHarmonicModel, GeoPoint) -> Double
+
+pub fn free_air_anomaly_mgal(Double, Double, Double) -> Double
+
+pub fn free_air_correction_mgal(Double) -> Double
+
+pub fn haversine_distance_m(GeoPoint, GeoPoint) -> Double
+
+pub fn interpolate_point(GeoPoint, GeoPoint, Double) -> GeoPoint
+
+pub fn lerp(Double, Double, Double) -> Double
+
+pub fn magnetic_components(Double, Double, Double) -> (Double, Double, Double)
+
+pub fn magnetic_declination_deg(Double, Double) -> Double
+
+pub fn magnetic_inclination_deg(Double) -> Double
+
+pub fn make_grid(origin_lat~ : Double, origin_lon~ : Double, lat_step~ : Double, lon_step~ : Double, rows~ : Int, cols~ : Int, values~ : Array[Double]) -> Grid
+
+pub fn normal_gravity_mgal(Double) -> Double
+
+pub fn normalize_longitude(Double) -> Double
+
+pub fn parse_field_samples_csv(String) -> Array[FieldSample] raise
+
+pub fn profile_between(Grid, GeoPoint, GeoPoint, Int) -> Array[ProfileSample]
+
+pub fn profile_to_csv(ArrayView[ProfileSample]) -> String
+
+pub fn rad_to_deg(Double) -> Double
+
+pub fn samples_to_csv(ArrayView[FieldSample]) -> String
+
+pub fn samples_to_geojson(ArrayView[FieldSample]) -> String
+
+// Errors
+
+// Types and methods
+pub(all) struct FieldSample {
+  point : GeoPoint
+  value : Double
+  name : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct GeoPoint {
+  lat : Double
+  lon : Double
+  elevation_m : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Grid {
+  origin_lat : Double
+  origin_lon : Double
+  lat_step : Double
+  lon_step : Double
+  rows : Int
+  cols : Int
+  values : Array[Double]
+} derive(Eq, @debug.Debug)
+pub fn Grid::index(Self, Int, Int) -> Int?
+pub fn Grid::is_valid(Self) -> Bool
+pub fn Grid::sample_bilinear(Self, GeoPoint) -> Double?
+pub fn Grid::sample_nearest(Self, GeoPoint) -> Double?
+pub fn Grid::value_at(Self, Int, Int) -> Double?
+
+pub(all) struct HarmonicTerm {
+  degree : Int
+  order : Int
+  cosine : Double
+  sine : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ProfileSample {
+  point : GeoPoint
+  distance_m : Double
+  value : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct SphericalHarmonicModel {
+  reference_radius_m : Double
+  scale : Double
+  terms : Array[HarmonicTerm]
+} derive(Eq, @debug.Debug)
+
+// Type aliases
+
+// Traits
+

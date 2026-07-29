@@ -24,7 +24,11 @@ pub fn parse_field_samples_csv(csv : String) -> Array[FieldSample] raise {
         let lon = parse_double_cell(cells[1])
         let elevation_m = parse_double_cell(cells[2])
         let value = parse_double_cell(cells[3])
-        let name = if cells.length() >= 5 { cells[4].trim().to_owned() } else { "sample" }
+        let name = if cells.length() >= 5 {
+          cells[4].trim().to_owned()
+        } else {
+          "sample"
+        }
         samples.push({ point: { lat, lon, elevation_m }, value, name })
       }
     }
@@ -47,15 +51,13 @@ pub fn samples_to_csv(samples : ArrayView[FieldSample]) -> String {
 pub fn samples_to_geojson(samples : ArrayView[FieldSample]) -> String {
   let parts : Array[String] = []
   for sample in samples {
-    let feature = (
-      "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[" +
+    let feature = "{\"type\":\"Feature\",\"geometry\":{\"type\":\"Point\",\"coordinates\":[" +
       "\{sample.point.lon},\{sample.point.lat},\{sample.point.elevation_m}" +
       "]},\"properties\":{\"name\":\"" +
       escape_json_string(sample.name) +
       "\",\"value\":" +
       "\{sample.value}" +
       "}}"
-    )
     parts.push(feature)
   }
   "{\"type\":\"FeatureCollection\",\"features\":[\{parts.join(",")}]}"

@@ -32,6 +32,7 @@ moon run cmd/main
 ## Example
 
 ```mbt check
+///|
 test {
   let station : GeoPoint = { lat: 32.0, lon: 118.0, elevation_m: 25.0 }
   let gamma = normal_gravity_mgal(station.lat)

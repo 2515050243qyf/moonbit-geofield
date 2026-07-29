@@ -18,7 +18,10 @@ fn associated_legendre(degree : Int, order : Int, x : Double) -> Double {
   } else if degree == 0 && order == 0 {
     1.0
   } else {
-    let base = @math.pow(Double::max(0.0, 1.0 - x * x), Double::from_int(order) / 2.0)
+    let base = @math.pow(
+      Double::max(0.0, 1.0 - x * x),
+      Double::from_int(order) / 2.0,
+    )
     let pmm = if order == 0 {
       1.0
     } else {
@@ -37,9 +40,10 @@ fn associated_legendre(degree : Int, order : Int, x : Double) -> Double {
       } else {
         for prev = pmm, curr = pm1m, n = order + 2; n <= degree; {
           let next = (
-            Double::from_int(2 * n - 1) * x * curr -
-            Double::from_int(n + order - 1) * prev
-          ) / Double::from_int(n - order)
+              Double::from_int(2 * n - 1) * x * curr -
+              Double::from_int(n + order - 1) * prev
+            ) /
+            Double::from_int(n - order)
           continue curr, next, n + 1
         } nobreak {
           curr
@@ -52,14 +56,16 @@ fn associated_legendre(degree : Int, order : Int, x : Double) -> Double {
 ///|
 fn harmonic_normalization(degree : Int, order : Int) -> Double {
   let delta = if order == 0 { 1.0 } else { 2.0 }
-  (delta * Double::from_int(2 * degree + 1) * factorial_ratio(degree - order, degree + order)).sqrt()
+  (delta *
+  Double::from_int(2 * degree + 1) *
+  factorial_ratio(degree - order, degree + order)).sqrt()
 }
 
 ///|
 /// Evaluate a compact spherical-harmonic-style model at a geographic point.
 pub fn evaluate_spherical_harmonic(
   model : SphericalHarmonicModel,
-  point : GeoPoint
+  point : GeoPoint,
 ) -> Double {
   let lat = deg_to_rad(clamp_latitude(point.lat))
   let lon = deg_to_rad(normalize_longitude(point.lon))
@@ -69,7 +75,10 @@ pub fn evaluate_spherical_harmonic(
     let term = model.terms[i]
     let n = term.degree
     let m = term.order
-    let radial = @math.pow(model.reference_radius_m / radius, Double::from_int(n + 1))
+    let radial = @math.pow(
+      model.reference_radius_m / radius,
+      Double::from_int(n + 1),
+    )
     let p = associated_legendre(n, m, x) * harmonic_normalization(n, m)
     let phase = Double::from_int(m) * lon
     let wave = term.cosine * @math.cos(phase) + term.sine * @math.sin(phase)

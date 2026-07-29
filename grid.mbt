@@ -1,7 +1,10 @@
 ///|
 pub fn Grid::is_valid(self : Grid) -> Bool {
-  self.rows > 0 && self.cols > 0 && self.values.length() == self.rows * self.cols &&
-  self.lat_step != 0.0 && self.lon_step != 0.0
+  self.rows > 0 &&
+  self.cols > 0 &&
+  self.values.length() == self.rows * self.cols &&
+  self.lat_step != 0.0 &&
+  self.lon_step != 0.0
 }
 
 ///|
@@ -23,7 +26,10 @@ pub fn Grid::value_at(self : Grid, row : Int, col : Int) -> Double? {
 
 ///|
 fn grid_position(grid : Grid, point : GeoPoint) -> (Double, Double) {
-  ((point.lat - grid.origin_lat) / grid.lat_step, (point.lon - grid.origin_lon) / grid.lon_step)
+  (
+    (point.lat - grid.origin_lat) / grid.lat_step,
+    (point.lon - grid.origin_lon) / grid.lon_step,
+  )
 }
 
 ///|
@@ -44,23 +50,24 @@ pub fn Grid::sample_bilinear(self : Grid, point : GeoPoint) -> Double? {
   } else if r0 == self.rows - 1 || c0 == self.cols - 1 {
     self.value_at(r0, c0)
   } else {
-  let r1 = r0 + 1
-  let c1 = c0 + 1
-  match (
-    self.value_at(r0, c0),
-    self.value_at(r0, c1),
-    self.value_at(r1, c0),
-    self.value_at(r1, c1),
-  ) {
-    (Some(v00), Some(v01), Some(v10), Some(v11)) => {
-      let tr = r - Double::from_int(r0)
-      let tc = c - Double::from_int(c0)
-      let a = lerp(v00, v01, tc)
-      let b = lerp(v10, v11, tc)
-      Some(lerp(a, b, tr))
+    let r1 = r0 + 1
+    let c1 = c0 + 1
+    match
+      (
+        self.value_at(r0, c0),
+        self.value_at(r0, c1),
+        self.value_at(r1, c0),
+        self.value_at(r1, c1),
+      ) {
+      (Some(v00), Some(v01), Some(v10), Some(v11)) => {
+        let tr = r - Double::from_int(r0)
+        let tc = c - Double::from_int(c0)
+        let a = lerp(v00, v01, tc)
+        let b = lerp(v10, v11, tc)
+        Some(lerp(a, b, tr))
+      }
+      _ => None
     }
-    _ => None
-  }
   }
 }
 
@@ -72,13 +79,18 @@ pub fn make_grid(
   lon_step~ : Double,
   rows~ : Int,
   cols~ : Int,
-  values~ : Array[Double]
+  values~ : Array[Double],
 ) -> Grid {
   { origin_lat, origin_lon, lat_step, lon_step, rows, cols, values }
 }
 
 ///|
-pub fn profile_between(grid : Grid, start : GeoPoint, finish : GeoPoint, samples : Int) -> Array[ProfileSample] {
+pub fn profile_between(
+  grid : Grid,
+  start : GeoPoint,
+  finish : GeoPoint,
+  samples : Int,
+) -> Array[ProfileSample] {
   if samples <= 0 {
     []
   } else if samples == 1 {
@@ -93,7 +105,8 @@ pub fn profile_between(grid : Grid, start : GeoPoint, finish : GeoPoint, samples
       let t = Double::from_int(i) / Double::from_int(samples - 1)
       let point = interpolate_point(start, finish, t)
       match grid.sample_bilinear(point) {
-        Some(value) => out.push({ point, distance_m: total_distance * t, value })
+        Some(value) =>
+          out.push({ point, distance_m: total_distance * t, value })
         None => ()
       }
     }

@@ -1,5 +1,9 @@
 ///|
-fn assert_close(actual : Double, expected : Double, tolerance : Double) -> Unit raise {
+fn assert_close(
+  actual : Double,
+  expected : Double,
+  tolerance : Double,
+) -> Unit raise {
   if (actual - expected).abs() > tolerance {
     fail("expected \{actual} to be close to \{expected}")
   }
@@ -53,7 +57,11 @@ test "spherical harmonic model evaluates deterministic correction" {
     scale: 10.0,
     terms: [{ degree: 0, order: 0, cosine: 2.0, sine: 0.0 }],
   }
-  let value = evaluate_spherical_harmonic(model, { lat: 0.0, lon: 0.0, elevation_m: 0.0 })
+  let value = evaluate_spherical_harmonic(model, {
+    lat: 0.0,
+    lon: 0.0,
+    elevation_m: 0.0,
+  })
   assert_close(value, 20.0, 0.000001)
 }
 
