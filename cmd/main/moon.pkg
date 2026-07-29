@@ -1,6 +1,6 @@
-// import {
-//   "2515050243qyf/moonbit-geofield" @lib,
-// }
+import {
+  "2515050243qyf/moonbit-geofield" @geofield,
+}
 
 options(
   "is-main": true,
