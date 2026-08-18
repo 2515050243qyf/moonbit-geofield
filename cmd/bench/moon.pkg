@@ -1,0 +1,6 @@
+import {
+  "2515050243qyf/moonbit-geofield" @geofield,
+  "moonbitlang/core/env",
+}
+
+pkgtype(kind: "executable")

@@ -52,3 +52,100 @@ pub(all) struct SphericalHarmonicModel {
   scale : Double
   terms : Array[HarmonicTerm]
 } derive(Debug, Eq)
+
+///|
+/// A closed numeric interval used by quality-control and resampling APIs.
+pub(all) struct NumericRange {
+  minimum : Double
+  maximum : Double
+} derive(Debug, Eq)
+
+///|
+pub enum QualityFlag {
+  Good
+  Suspect
+  Missing
+  Invalid
+  Outlier
+} derive(Debug, Eq)
+
+///|
+/// A field sample with a quality flag and optional source label.
+pub(all) struct QualitySample {
+  sample : FieldSample
+  flag : QualityFlag
+  uncertainty : Double
+  source : String
+} derive(Debug, Eq)
+
+///|
+pub enum MissingPolicy {
+  SkipMissing
+  PreserveMissing
+  ReplaceWith(value~ : Double)
+} derive(Debug, Eq)
+
+///|
+pub(all) struct Summary {
+  count : Int
+  missing : Int
+  minimum : Double
+  maximum : Double
+  mean : Double
+  variance : Double
+  sum : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct GridExtent {
+  min_lat : Double
+  max_lat : Double
+  min_lon : Double
+  max_lon : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct GridCell {
+  row : Int
+  col : Int
+  point : GeoPoint
+  value : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct Vector3 {
+  x : Double
+  y : Double
+  z : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct Gradient {
+  north_per_degree : Double
+  east_per_degree : Double
+  magnitude : Double
+  azimuth_deg : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct ProfileSummary {
+  samples : Int
+  distance_m : Double
+  minimum : Double
+  maximum : Double
+  mean : Double
+  range : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct ContourSegment {
+  start : GeoPoint
+  finish : GeoPoint
+  level : Double
+} derive(Debug, Eq)
+
+///|
+pub(all) struct CoefficientParseError {
+  line : Int
+  message : String
+} derive(Debug, Eq)

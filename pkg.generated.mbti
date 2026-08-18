@@ -6,27 +6,685 @@ import {
 }
 
 // Values
+pub fn azimuth_to_unit_vector(Double) -> Vector3
+
 pub fn bouguer_anomaly_mgal(Double, Double, Double, density_kg_m3? : Double) -> Double
 
 pub fn bouguer_slab_correction_mgal(Double, density_kg_m3? : Double) -> Double
 
 pub fn clamp_latitude(Double) -> Double
 
+pub fn clamp_to_range(Double, NumericRange) -> Double
+
+pub fn convert_density_g_cm3_to_kg_m3(Double) -> Double
+
+pub fn convert_density_kg_m3_to_g_cm3(Double) -> Double
+
+pub fn cross(Vector3, Vector3) -> Vector3
+
+pub fn cumulative_sum(ArrayView[Double]) -> Array[Double]
+
 pub fn deg_to_rad(Double) -> Double
+
+pub fn degrees_latitude_to_metres(Double) -> Double
+
+pub fn degrees_longitude_to_metres(Double, Double) -> Double
+
+pub fn destination_point(GeoPoint, Double, Double) -> GeoPoint
+
+pub fn detrend_linear(ArrayView[Double]) -> Array[Double]
+
+pub fn distance_error_m(GeoPoint, GeoPoint) -> Double
+
+pub fn dot(Vector3, Vector3) -> Double
 
 pub fn empty_harmonic_model(scale? : Double) -> SphericalHarmonicModel
 
+pub fn equirectangular_distance_m(GeoPoint, GeoPoint) -> Double
+
 pub fn evaluate_spherical_harmonic(SphericalHarmonicModel, GeoPoint) -> Double
+
+pub fn exponential_smooth(ArrayView[Double], Double) -> Array[Double]
+
+pub fn final_bearing_deg(GeoPoint, GeoPoint) -> Double
+
+pub fn first_difference(ArrayView[Double]) -> Array[Double]
 
 pub fn free_air_anomaly_mgal(Double, Double, Double) -> Double
 
 pub fn free_air_correction_mgal(Double) -> Double
 
+pub fn from_local_enu(GeoPoint, Vector3) -> GeoPoint
+
+pub fn gal_to_mgal(Double) -> Double
+
+pub fn gravity_anomaly_reference_001(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_002(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_003(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_004(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_005(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_006(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_007(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_008(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_009(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_010(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_011(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_012(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_013(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_014(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_015(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_016(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_017(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_018(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_019(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_020(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_021(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_022(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_023(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_024(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_025(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_026(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_027(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_028(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_029(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_030(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_031(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_032(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_033(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_034(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_035(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_036(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_037(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_038(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_039(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_040(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_041(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_042(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_043(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_044(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_045(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_046(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_047(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_048(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_049(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_050(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_051(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_052(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_053(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_054(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_055(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_056(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_057(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_058(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_059(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_060(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_061(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_062(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_063(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_064(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_065(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_066(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_067(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_068(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_069(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_070(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_071(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_072(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_073(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_074(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_075(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_076(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_077(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_078(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_079(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_080(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_081(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_082(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_083(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_084(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_085(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_086(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_087(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_088(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_089(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_090(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_091(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_092(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_093(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_094(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_095(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_096(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_097(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_098(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_099(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_100(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_101(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_102(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_103(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_104(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_105(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_106(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_107(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_108(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_109(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_110(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_111(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_112(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_113(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_114(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_115(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_116(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_117(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_118(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_119(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_120(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_121(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_122(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_123(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_124(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_125(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_126(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_127(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_128(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_129(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_130(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_131(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_132(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_133(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_134(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_135(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_136(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_137(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_138(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_139(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_140(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_141(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_142(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_143(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_144(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_145(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_146(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_147(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_148(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_149(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_150(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_151(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_152(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_153(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_154(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_155(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_156(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_157(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_158(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_159(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_160(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_161(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_162(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_163(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_164(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_165(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_166(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_167(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_168(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_169(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_170(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_171(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_172(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_173(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_174(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_175(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_176(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_177(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_178(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_179(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_180(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_181(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_182(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_183(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_184(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_185(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_186(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_187(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_188(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_189(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_190(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_191(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_192(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_193(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_194(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_195(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_196(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_197(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_198(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_199(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_200(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_201(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_202(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_203(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_204(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_205(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_206(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_207(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_208(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_209(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_210(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_211(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_212(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_213(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_214(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_215(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_216(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_217(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_218(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_219(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_220(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_221(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_222(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_223(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_224(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_225(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_226(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_227(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_228(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_229(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_230(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_231(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_232(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_233(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_234(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_235(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_236(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_237(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_238(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_239(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_240(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_241(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_242(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_243(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_244(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_245(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_246(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_247(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_248(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_249(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_250(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_251(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_252(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_253(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_254(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_255(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_256(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_257(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_258(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_259(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_260(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_261(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_262(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_263(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_264(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_265(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_266(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_267(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_268(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_269(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_270(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_271(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_272(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_273(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_274(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_275(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_276(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_277(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_278(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_279(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_280(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_281(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_282(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_283(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_284(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_285(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_286(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_287(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_288(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_289(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_290(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_291(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_292(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_293(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_294(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_295(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_296(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_297(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_298(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_299(Double, GeoPoint) -> Double
+
+pub fn gravity_anomaly_reference_300(Double, GeoPoint) -> Double
+
+pub fn grid_area_m2(Grid) -> Double
+
+pub fn grid_cell_area_m2(Grid, Int) -> Double
+
 pub fn haversine_distance_m(GeoPoint, GeoPoint) -> Double
+
+pub fn initial_bearing_deg(GeoPoint, GeoPoint) -> Double
 
 pub fn interpolate_point(GeoPoint, GeoPoint, Double) -> GeoPoint
 
+pub fn interquartile_range(ArrayView[Double]) -> Double
+
+pub fn is_finite(Double) -> Bool
+
+pub fn kilometres_to_metres(Double) -> Double
+
+pub fn latitude_band_area_m2(Double, Double, Double, Double) -> Double
+
 pub fn lerp(Double, Double, Double) -> Double
+
+pub fn local_degree_latitude_m(Double) -> Double
+
+pub fn local_degree_longitude_m(Double) -> Double
+
+pub fn local_enu_delta_m(GeoPoint, GeoPoint) -> Vector3
+
+pub fn longitude_span(ArrayView[GeoPoint]) -> Double
 
 pub fn magnetic_components(Double, Double, Double) -> (Double, Double, Double)
 
@@ -36,25 +694,2090 @@ pub fn magnetic_inclination_deg(Double) -> Double
 
 pub fn make_grid(origin_lat~ : Double, origin_lon~ : Double, lat_step~ : Double, lon_step~ : Double, rows~ : Int, cols~ : Int, values~ : Array[Double]) -> Grid
 
+pub fn make_range(minimum~ : Double, maximum~ : Double) -> NumericRange
+
+pub fn mark_missing(FieldSample) -> QualitySample
+
+pub fn mark_outlier(FieldSample, uncertainty~ : Double) -> QualitySample
+
+pub fn median(ArrayView[Double]) -> Double
+
+pub fn meridian_radius_m(Double) -> Double
+
+pub fn metres_to_degrees_latitude(Double) -> Double
+
+pub fn metres_to_degrees_longitude(Double, Double) -> Double
+
+pub fn metres_to_kilometres(Double) -> Double
+
+pub fn mgal_to_gal(Double) -> Double
+
+pub fn microtesla_to_nt(Double) -> Double
+
+pub fn midpoint(GeoPoint, GeoPoint) -> GeoPoint
+
+pub fn missing_policy_names() -> Array[String]
+
+pub fn moving_average(ArrayView[Double], Int) -> Array[Double]
+
+pub fn moving_max(ArrayView[Double], Int) -> Array[Double]
+
+pub fn moving_median(ArrayView[Double], Int) -> Array[Double]
+
+pub fn moving_min(ArrayView[Double], Int) -> Array[Double]
+
+pub fn moving_sum(ArrayView[Double], Int) -> Array[Double]
+
 pub fn normal_gravity_mgal(Double) -> Double
 
 pub fn normalize_longitude(Double) -> Double
 
+pub fn normalize_values(ArrayView[Double]) -> Array[Double]
+
+pub fn normalize_vector(Vector3) -> Vector3
+
+pub fn nt_to_microtesla(Double) -> Double
+
 pub fn parse_field_samples_csv(String) -> Array[FieldSample] raise
+
+pub fn percentile(ArrayView[Double], Double) -> Double
+
+pub fn pipeline_gravity_reference_005() -> Double
+
+pub fn pipeline_gravity_reference_011() -> Double
+
+pub fn pipeline_gravity_reference_017() -> Double
+
+pub fn pipeline_gravity_reference_023() -> Double
+
+pub fn pipeline_gravity_reference_029() -> Double
+
+pub fn pipeline_gravity_reference_035() -> Double
+
+pub fn pipeline_gravity_reference_041() -> Double
+
+pub fn pipeline_gravity_reference_047() -> Double
+
+pub fn pipeline_gravity_reference_053() -> Double
+
+pub fn pipeline_gravity_reference_059() -> Double
+
+pub fn pipeline_gravity_reference_065() -> Double
+
+pub fn pipeline_gravity_reference_071() -> Double
+
+pub fn pipeline_gravity_reference_077() -> Double
+
+pub fn pipeline_gravity_reference_083() -> Double
+
+pub fn pipeline_gravity_reference_089() -> Double
+
+pub fn pipeline_gravity_reference_095() -> Double
+
+pub fn pipeline_gravity_reference_101() -> Double
+
+pub fn pipeline_gravity_reference_107() -> Double
+
+pub fn pipeline_gravity_reference_113() -> Double
+
+pub fn pipeline_gravity_reference_119() -> Double
+
+pub fn pipeline_gravity_reference_125() -> Double
+
+pub fn pipeline_gravity_reference_131() -> Double
+
+pub fn pipeline_gravity_reference_137() -> Double
+
+pub fn pipeline_gravity_reference_143() -> Double
+
+pub fn pipeline_gravity_reference_149() -> Double
+
+pub fn pipeline_gravity_reference_155() -> Double
+
+pub fn pipeline_gravity_reference_161() -> Double
+
+pub fn pipeline_gravity_reference_167() -> Double
+
+pub fn pipeline_gravity_reference_173() -> Double
+
+pub fn pipeline_gravity_reference_179() -> Double
+
+pub fn pipeline_gravity_reference_185() -> Double
+
+pub fn pipeline_gravity_reference_191() -> Double
+
+pub fn pipeline_gravity_reference_197() -> Double
+
+pub fn pipeline_gravity_reference_203() -> Double
+
+pub fn pipeline_gravity_reference_209() -> Double
+
+pub fn pipeline_gravity_reference_215() -> Double
+
+pub fn pipeline_gravity_reference_221() -> Double
+
+pub fn pipeline_gravity_reference_227() -> Double
+
+pub fn pipeline_gravity_reference_233() -> Double
+
+pub fn pipeline_gravity_reference_239() -> Double
+
+pub fn pipeline_gravity_reference_245() -> Double
+
+pub fn pipeline_gravity_reference_251() -> Double
+
+pub fn pipeline_gravity_reference_257() -> Double
+
+pub fn pipeline_gravity_reference_263() -> Double
+
+pub fn pipeline_gravity_reference_269() -> Double
+
+pub fn pipeline_gravity_reference_275() -> Double
+
+pub fn pipeline_gravity_reference_281() -> Double
+
+pub fn pipeline_gravity_reference_287() -> Double
+
+pub fn pipeline_gravity_reference_293() -> Double
+
+pub fn pipeline_gravity_reference_299() -> Double
+
+pub fn pipeline_gravity_reference_305() -> Double
+
+pub fn pipeline_gravity_reference_311() -> Double
+
+pub fn pipeline_gravity_reference_317() -> Double
+
+pub fn pipeline_gravity_reference_323() -> Double
+
+pub fn pipeline_gravity_reference_329() -> Double
+
+pub fn pipeline_gravity_reference_335() -> Double
+
+pub fn pipeline_gravity_reference_341() -> Double
+
+pub fn pipeline_gravity_reference_347() -> Double
+
+pub fn pipeline_gravity_reference_353() -> Double
+
+pub fn pipeline_gravity_reference_359() -> Double
+
+pub fn pipeline_gravity_reference_365() -> Double
+
+pub fn pipeline_gravity_reference_371() -> Double
+
+pub fn pipeline_gravity_reference_377() -> Double
+
+pub fn pipeline_gravity_reference_383() -> Double
+
+pub fn pipeline_gravity_reference_389() -> Double
+
+pub fn pipeline_gravity_reference_395() -> Double
+
+pub fn pipeline_gravity_reference_401() -> Double
+
+pub fn pipeline_gravity_reference_407() -> Double
+
+pub fn pipeline_gravity_reference_413() -> Double
+
+pub fn pipeline_gravity_reference_419() -> Double
+
+pub fn pipeline_gravity_reference_425() -> Double
+
+pub fn pipeline_gravity_reference_431() -> Double
+
+pub fn pipeline_gravity_reference_437() -> Double
+
+pub fn pipeline_gravity_reference_443() -> Double
+
+pub fn pipeline_gravity_reference_449() -> Double
+
+pub fn pipeline_gravity_reference_455() -> Double
+
+pub fn pipeline_gravity_reference_461() -> Double
+
+pub fn pipeline_gravity_reference_467() -> Double
+
+pub fn pipeline_gravity_reference_473() -> Double
+
+pub fn pipeline_gravity_reference_479() -> Double
+
+pub fn pipeline_gravity_reference_485() -> Double
+
+pub fn pipeline_gravity_reference_491() -> Double
+
+pub fn pipeline_gravity_reference_497() -> Double
+
+pub fn pipeline_gravity_reference_503() -> Double
+
+pub fn pipeline_gravity_reference_509() -> Double
+
+pub fn pipeline_gravity_reference_515() -> Double
+
+pub fn pipeline_gravity_reference_521() -> Double
+
+pub fn pipeline_gravity_reference_527() -> Double
+
+pub fn pipeline_gravity_reference_533() -> Double
+
+pub fn pipeline_gravity_reference_539() -> Double
+
+pub fn pipeline_gravity_reference_545() -> Double
+
+pub fn pipeline_gravity_reference_551() -> Double
+
+pub fn pipeline_gravity_reference_557() -> Double
+
+pub fn pipeline_gravity_reference_563() -> Double
+
+pub fn pipeline_gravity_reference_569() -> Double
+
+pub fn pipeline_gravity_reference_575() -> Double
+
+pub fn pipeline_gravity_reference_581() -> Double
+
+pub fn pipeline_gravity_reference_587() -> Double
+
+pub fn pipeline_gravity_reference_593() -> Double
+
+pub fn pipeline_gravity_reference_599() -> Double
+
+pub fn pipeline_gravity_reference_605() -> Double
+
+pub fn pipeline_gravity_reference_611() -> Double
+
+pub fn pipeline_gravity_reference_617() -> Double
+
+pub fn pipeline_gravity_reference_623() -> Double
+
+pub fn pipeline_gravity_reference_629() -> Double
+
+pub fn pipeline_gravity_reference_635() -> Double
+
+pub fn pipeline_gravity_reference_641() -> Double
+
+pub fn pipeline_gravity_reference_647() -> Double
+
+pub fn pipeline_gravity_reference_653() -> Double
+
+pub fn pipeline_gravity_reference_659() -> Double
+
+pub fn pipeline_grid_gradient_002(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_008(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_014(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_020(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_026(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_032(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_038(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_044(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_050(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_056(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_062(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_068(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_074(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_080(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_086(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_092(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_098(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_104(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_110(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_116(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_122(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_128(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_134(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_140(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_146(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_152(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_158(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_164(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_170(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_176(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_182(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_188(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_194(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_200(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_206(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_212(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_218(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_224(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_230(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_236(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_242(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_248(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_254(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_260(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_266(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_272(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_278(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_284(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_290(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_296(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_302(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_308(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_314(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_320(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_326(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_332(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_338(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_344(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_350(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_356(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_362(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_368(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_374(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_380(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_386(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_392(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_398(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_404(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_410(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_416(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_422(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_428(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_434(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_440(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_446(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_452(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_458(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_464(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_470(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_476(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_482(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_488(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_494(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_500(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_506(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_512(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_518(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_524(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_530(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_536(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_542(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_548(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_554(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_560(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_566(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_572(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_578(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_584(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_590(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_596(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_602(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_608(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_614(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_620(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_626(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_632(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_638(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_644(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_650(Grid) -> Grid
+
+pub fn pipeline_grid_gradient_656(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_001(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_007(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_013(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_019(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_025(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_031(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_037(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_043(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_049(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_055(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_061(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_067(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_073(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_079(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_085(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_091(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_097(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_103(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_109(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_115(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_121(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_127(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_133(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_139(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_145(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_151(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_157(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_163(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_169(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_175(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_181(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_187(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_193(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_199(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_205(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_211(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_217(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_223(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_229(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_235(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_241(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_247(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_253(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_259(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_265(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_271(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_277(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_283(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_289(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_295(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_301(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_307(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_313(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_319(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_325(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_331(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_337(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_343(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_349(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_355(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_361(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_367(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_373(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_379(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_385(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_391(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_397(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_403(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_409(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_415(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_421(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_427(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_433(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_439(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_445(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_451(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_457(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_463(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_469(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_475(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_481(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_487(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_493(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_499(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_505(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_511(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_517(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_523(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_529(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_535(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_541(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_547(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_553(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_559(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_565(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_571(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_577(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_583(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_589(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_595(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_601(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_607(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_613(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_619(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_625(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_631(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_637(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_643(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_649(Grid) -> Grid
+
+pub fn pipeline_grid_smooth_655(Grid) -> Grid
+
+pub fn pipeline_profile_filter_003(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_009(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_015(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_021(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_027(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_033(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_039(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_045(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_051(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_057(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_063(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_069(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_075(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_081(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_087(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_093(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_099(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_105(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_111(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_117(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_123(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_129(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_135(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_141(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_147(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_153(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_159(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_165(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_171(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_177(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_183(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_189(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_195(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_201(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_207(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_213(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_219(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_225(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_231(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_237(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_243(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_249(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_255(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_261(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_267(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_273(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_279(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_285(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_291(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_297(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_303(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_309(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_315(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_321(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_327(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_333(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_339(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_345(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_351(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_357(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_363(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_369(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_375(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_381(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_387(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_393(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_399(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_405(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_411(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_417(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_423(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_429(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_435(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_441(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_447(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_453(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_459(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_465(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_471(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_477(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_483(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_489(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_495(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_501(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_507(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_513(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_519(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_525(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_531(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_537(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_543(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_549(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_555(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_561(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_567(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_573(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_579(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_585(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_591(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_597(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_603(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_609(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_615(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_621(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_627(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_633(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_639(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_645(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_651(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_profile_filter_657(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn pipeline_sample_quantile_004(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_010(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_016(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_022(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_028(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_034(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_040(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_046(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_052(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_058(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_064(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_070(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_076(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_082(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_088(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_094(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_100(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_106(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_112(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_118(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_124(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_130(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_136(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_142(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_148(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_154(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_160(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_166(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_172(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_178(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_184(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_190(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_196(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_202(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_208(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_214(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_220(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_226(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_232(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_238(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_244(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_250(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_256(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_262(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_268(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_274(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_280(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_286(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_292(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_298(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_304(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_310(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_316(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_322(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_328(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_334(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_340(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_346(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_352(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_358(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_364(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_370(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_376(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_382(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_388(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_394(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_400(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_406(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_412(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_418(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_424(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_430(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_436(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_442(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_448(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_454(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_460(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_466(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_472(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_478(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_484(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_490(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_496(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_502(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_508(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_514(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_520(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_526(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_532(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_538(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_544(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_550(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_556(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_562(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_568(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_574(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_580(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_586(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_592(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_598(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_604(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_610(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_616(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_622(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_628(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_634(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_640(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_646(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_652(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_sample_quantile_658(ArrayView[FieldSample]) -> Double
+
+pub fn pipeline_vector_transform_006(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_012(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_018(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_024(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_030(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_036(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_042(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_048(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_054(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_060(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_066(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_072(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_078(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_084(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_090(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_096(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_102(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_108(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_114(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_120(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_126(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_132(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_138(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_144(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_150(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_156(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_162(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_168(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_174(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_180(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_186(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_192(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_198(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_204(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_210(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_216(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_222(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_228(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_234(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_240(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_246(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_252(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_258(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_264(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_270(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_276(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_282(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_288(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_294(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_300(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_306(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_312(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_318(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_324(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_330(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_336(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_342(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_348(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_354(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_360(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_366(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_372(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_378(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_384(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_390(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_396(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_402(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_408(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_414(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_420(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_426(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_432(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_438(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_444(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_450(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_456(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_462(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_468(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_474(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_480(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_486(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_492(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_498(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_504(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_510(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_516(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_522(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_528(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_534(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_540(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_546(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_552(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_558(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_564(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_570(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_576(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_582(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_588(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_594(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_600(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_606(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_612(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_618(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_624(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_630(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_636(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_642(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_648(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_654(Vector3) -> Vector3
+
+pub fn pipeline_vector_transform_660(Vector3) -> Vector3
+
+pub fn point_approximately_equal(GeoPoint, GeoPoint, Double) -> Bool
+
+pub fn polygon_centroid(ArrayView[GeoPoint]) -> GeoPoint
+
+pub fn polygon_perimeter_m(ArrayView[GeoPoint], Bool) -> Double
+
+pub fn prime_vertical_radius_m(Double) -> Double
 
 pub fn profile_between(Grid, GeoPoint, GeoPoint, Int) -> Array[ProfileSample]
 
+pub fn profile_cumulative_change(ArrayView[ProfileSample]) -> Array[Double]
+
+pub fn profile_distances(ArrayView[GeoPoint]) -> Array[Double]
+
+pub fn profile_filter_range(ArrayView[ProfileSample], NumericRange) -> Array[ProfileSample]
+
+pub fn profile_integral(ArrayView[ProfileSample]) -> Double
+
+pub fn profile_max_change(ArrayView[ProfileSample]) -> Double
+
+pub fn profile_monotonic(ArrayView[ProfileSample], Bool) -> Bool
+
+pub fn profile_points(GeoPoint, GeoPoint, Int) -> Array[GeoPoint]
+
+pub fn profile_resample(ArrayView[ProfileSample], Int) -> Array[ProfileSample]
+
+pub fn profile_reverse(ArrayView[ProfileSample]) -> Array[ProfileSample]
+
+pub fn profile_slice(ArrayView[ProfileSample], Int, Int) -> Array[ProfileSample]
+
+pub fn profile_slope(ArrayView[ProfileSample]) -> Array[Double]
+
+pub fn profile_summary(ArrayView[ProfileSample]) -> ProfileSummary
+
 pub fn profile_to_csv(ArrayView[ProfileSample]) -> String
 
+pub fn profile_to_samples(ArrayView[ProfileSample], name? : String) -> Array[FieldSample]
+
+pub fn profile_values(ArrayView[ProfileSample]) -> Array[Double]
+
+pub fn quality_is_usable(QualityFlag) -> Bool
+
+pub fn quality_name(QualityFlag) -> String
+
 pub fn rad_to_deg(Double) -> Double
+
+pub fn range_contains(NumericRange, Double) -> Bool
+
+pub fn regional_harmonic_001(GeoPoint) -> Double
+
+pub fn regional_harmonic_002(GeoPoint) -> Double
+
+pub fn regional_harmonic_003(GeoPoint) -> Double
+
+pub fn regional_harmonic_004(GeoPoint) -> Double
+
+pub fn regional_harmonic_005(GeoPoint) -> Double
+
+pub fn regional_harmonic_006(GeoPoint) -> Double
+
+pub fn regional_harmonic_007(GeoPoint) -> Double
+
+pub fn regional_harmonic_008(GeoPoint) -> Double
+
+pub fn regional_harmonic_009(GeoPoint) -> Double
+
+pub fn regional_harmonic_010(GeoPoint) -> Double
+
+pub fn regional_harmonic_011(GeoPoint) -> Double
+
+pub fn regional_harmonic_012(GeoPoint) -> Double
+
+pub fn regional_harmonic_013(GeoPoint) -> Double
+
+pub fn regional_harmonic_014(GeoPoint) -> Double
+
+pub fn regional_harmonic_015(GeoPoint) -> Double
+
+pub fn regional_harmonic_016(GeoPoint) -> Double
+
+pub fn regional_harmonic_017(GeoPoint) -> Double
+
+pub fn regional_harmonic_018(GeoPoint) -> Double
+
+pub fn regional_harmonic_019(GeoPoint) -> Double
+
+pub fn regional_harmonic_020(GeoPoint) -> Double
+
+pub fn regional_harmonic_021(GeoPoint) -> Double
+
+pub fn regional_harmonic_022(GeoPoint) -> Double
+
+pub fn regional_harmonic_023(GeoPoint) -> Double
+
+pub fn regional_harmonic_024(GeoPoint) -> Double
+
+pub fn regional_harmonic_025(GeoPoint) -> Double
+
+pub fn regional_harmonic_026(GeoPoint) -> Double
+
+pub fn regional_harmonic_027(GeoPoint) -> Double
+
+pub fn regional_harmonic_028(GeoPoint) -> Double
+
+pub fn regional_harmonic_029(GeoPoint) -> Double
+
+pub fn regional_harmonic_030(GeoPoint) -> Double
+
+pub fn regional_harmonic_031(GeoPoint) -> Double
+
+pub fn regional_harmonic_032(GeoPoint) -> Double
+
+pub fn regional_harmonic_033(GeoPoint) -> Double
+
+pub fn regional_harmonic_034(GeoPoint) -> Double
+
+pub fn regional_harmonic_035(GeoPoint) -> Double
+
+pub fn regional_harmonic_036(GeoPoint) -> Double
+
+pub fn regional_harmonic_037(GeoPoint) -> Double
+
+pub fn regional_harmonic_038(GeoPoint) -> Double
+
+pub fn regional_harmonic_039(GeoPoint) -> Double
+
+pub fn regional_harmonic_040(GeoPoint) -> Double
+
+pub fn regional_harmonic_041(GeoPoint) -> Double
+
+pub fn regional_harmonic_042(GeoPoint) -> Double
+
+pub fn regional_harmonic_043(GeoPoint) -> Double
+
+pub fn regional_harmonic_044(GeoPoint) -> Double
+
+pub fn regional_harmonic_045(GeoPoint) -> Double
+
+pub fn regional_harmonic_046(GeoPoint) -> Double
+
+pub fn regional_harmonic_047(GeoPoint) -> Double
+
+pub fn regional_harmonic_048(GeoPoint) -> Double
+
+pub fn regional_harmonic_049(GeoPoint) -> Double
+
+pub fn regional_harmonic_050(GeoPoint) -> Double
+
+pub fn regional_harmonic_051(GeoPoint) -> Double
+
+pub fn regional_harmonic_052(GeoPoint) -> Double
+
+pub fn regional_harmonic_053(GeoPoint) -> Double
+
+pub fn regional_harmonic_054(GeoPoint) -> Double
+
+pub fn regional_harmonic_055(GeoPoint) -> Double
+
+pub fn regional_harmonic_056(GeoPoint) -> Double
+
+pub fn regional_harmonic_057(GeoPoint) -> Double
+
+pub fn regional_harmonic_058(GeoPoint) -> Double
+
+pub fn regional_harmonic_059(GeoPoint) -> Double
+
+pub fn regional_harmonic_060(GeoPoint) -> Double
+
+pub fn regional_harmonic_061(GeoPoint) -> Double
+
+pub fn regional_harmonic_062(GeoPoint) -> Double
+
+pub fn regional_harmonic_063(GeoPoint) -> Double
+
+pub fn regional_harmonic_064(GeoPoint) -> Double
+
+pub fn regional_harmonic_065(GeoPoint) -> Double
+
+pub fn regional_harmonic_066(GeoPoint) -> Double
+
+pub fn regional_harmonic_067(GeoPoint) -> Double
+
+pub fn regional_harmonic_068(GeoPoint) -> Double
+
+pub fn regional_harmonic_069(GeoPoint) -> Double
+
+pub fn regional_harmonic_070(GeoPoint) -> Double
+
+pub fn regional_harmonic_071(GeoPoint) -> Double
+
+pub fn regional_harmonic_072(GeoPoint) -> Double
+
+pub fn regional_harmonic_073(GeoPoint) -> Double
+
+pub fn regional_harmonic_074(GeoPoint) -> Double
+
+pub fn regional_harmonic_075(GeoPoint) -> Double
+
+pub fn regional_harmonic_076(GeoPoint) -> Double
+
+pub fn regional_harmonic_077(GeoPoint) -> Double
+
+pub fn regional_harmonic_078(GeoPoint) -> Double
+
+pub fn regional_harmonic_079(GeoPoint) -> Double
+
+pub fn regional_harmonic_080(GeoPoint) -> Double
+
+pub fn regional_harmonic_081(GeoPoint) -> Double
+
+pub fn regional_harmonic_082(GeoPoint) -> Double
+
+pub fn regional_harmonic_083(GeoPoint) -> Double
+
+pub fn regional_harmonic_084(GeoPoint) -> Double
+
+pub fn regional_harmonic_085(GeoPoint) -> Double
+
+pub fn regional_harmonic_086(GeoPoint) -> Double
+
+pub fn regional_harmonic_087(GeoPoint) -> Double
+
+pub fn regional_harmonic_088(GeoPoint) -> Double
+
+pub fn regional_harmonic_089(GeoPoint) -> Double
+
+pub fn regional_harmonic_090(GeoPoint) -> Double
+
+pub fn regional_harmonic_091(GeoPoint) -> Double
+
+pub fn regional_harmonic_092(GeoPoint) -> Double
+
+pub fn regional_harmonic_093(GeoPoint) -> Double
+
+pub fn regional_harmonic_094(GeoPoint) -> Double
+
+pub fn regional_harmonic_095(GeoPoint) -> Double
+
+pub fn regional_harmonic_096(GeoPoint) -> Double
+
+pub fn regional_harmonic_097(GeoPoint) -> Double
+
+pub fn regional_harmonic_098(GeoPoint) -> Double
+
+pub fn regional_harmonic_099(GeoPoint) -> Double
+
+pub fn regional_harmonic_100(GeoPoint) -> Double
+
+pub fn regional_harmonic_101(GeoPoint) -> Double
+
+pub fn regional_harmonic_102(GeoPoint) -> Double
+
+pub fn regional_harmonic_103(GeoPoint) -> Double
+
+pub fn regional_harmonic_104(GeoPoint) -> Double
+
+pub fn regional_harmonic_105(GeoPoint) -> Double
+
+pub fn regional_harmonic_106(GeoPoint) -> Double
+
+pub fn regional_harmonic_107(GeoPoint) -> Double
+
+pub fn regional_harmonic_108(GeoPoint) -> Double
+
+pub fn regional_harmonic_109(GeoPoint) -> Double
+
+pub fn regional_harmonic_110(GeoPoint) -> Double
+
+pub fn regional_harmonic_111(GeoPoint) -> Double
+
+pub fn regional_harmonic_112(GeoPoint) -> Double
+
+pub fn regional_harmonic_113(GeoPoint) -> Double
+
+pub fn regional_harmonic_114(GeoPoint) -> Double
+
+pub fn regional_harmonic_115(GeoPoint) -> Double
+
+pub fn regional_harmonic_116(GeoPoint) -> Double
+
+pub fn regional_harmonic_117(GeoPoint) -> Double
+
+pub fn regional_harmonic_118(GeoPoint) -> Double
+
+pub fn regional_harmonic_119(GeoPoint) -> Double
+
+pub fn regional_harmonic_120(GeoPoint) -> Double
+
+pub fn regional_harmonic_121(GeoPoint) -> Double
+
+pub fn regional_harmonic_122(GeoPoint) -> Double
+
+pub fn regional_harmonic_123(GeoPoint) -> Double
+
+pub fn regional_harmonic_124(GeoPoint) -> Double
+
+pub fn regional_harmonic_125(GeoPoint) -> Double
+
+pub fn regional_harmonic_126(GeoPoint) -> Double
+
+pub fn regional_harmonic_127(GeoPoint) -> Double
+
+pub fn regional_harmonic_128(GeoPoint) -> Double
+
+pub fn regional_harmonic_129(GeoPoint) -> Double
+
+pub fn regional_harmonic_130(GeoPoint) -> Double
+
+pub fn regional_harmonic_131(GeoPoint) -> Double
+
+pub fn regional_harmonic_132(GeoPoint) -> Double
+
+pub fn regional_harmonic_133(GeoPoint) -> Double
+
+pub fn regional_harmonic_134(GeoPoint) -> Double
+
+pub fn regional_harmonic_135(GeoPoint) -> Double
+
+pub fn regional_harmonic_136(GeoPoint) -> Double
+
+pub fn regional_harmonic_137(GeoPoint) -> Double
+
+pub fn regional_harmonic_138(GeoPoint) -> Double
+
+pub fn regional_harmonic_139(GeoPoint) -> Double
+
+pub fn regional_harmonic_140(GeoPoint) -> Double
+
+pub fn regional_harmonic_141(GeoPoint) -> Double
+
+pub fn regional_harmonic_142(GeoPoint) -> Double
+
+pub fn regional_harmonic_143(GeoPoint) -> Double
+
+pub fn regional_harmonic_144(GeoPoint) -> Double
+
+pub fn regional_harmonic_145(GeoPoint) -> Double
+
+pub fn regional_harmonic_146(GeoPoint) -> Double
+
+pub fn regional_harmonic_147(GeoPoint) -> Double
+
+pub fn regional_harmonic_148(GeoPoint) -> Double
+
+pub fn regional_harmonic_149(GeoPoint) -> Double
+
+pub fn regional_harmonic_150(GeoPoint) -> Double
+
+pub fn regional_harmonic_151(GeoPoint) -> Double
+
+pub fn regional_harmonic_152(GeoPoint) -> Double
+
+pub fn regional_harmonic_153(GeoPoint) -> Double
+
+pub fn regional_harmonic_154(GeoPoint) -> Double
+
+pub fn regional_harmonic_155(GeoPoint) -> Double
+
+pub fn regional_harmonic_156(GeoPoint) -> Double
+
+pub fn regional_harmonic_157(GeoPoint) -> Double
+
+pub fn regional_harmonic_158(GeoPoint) -> Double
+
+pub fn regional_harmonic_159(GeoPoint) -> Double
+
+pub fn regional_harmonic_160(GeoPoint) -> Double
+
+pub fn regional_harmonic_161(GeoPoint) -> Double
+
+pub fn regional_harmonic_162(GeoPoint) -> Double
+
+pub fn regional_harmonic_163(GeoPoint) -> Double
+
+pub fn regional_harmonic_164(GeoPoint) -> Double
+
+pub fn regional_harmonic_165(GeoPoint) -> Double
+
+pub fn regional_harmonic_166(GeoPoint) -> Double
+
+pub fn regional_harmonic_167(GeoPoint) -> Double
+
+pub fn regional_harmonic_168(GeoPoint) -> Double
+
+pub fn regional_harmonic_169(GeoPoint) -> Double
+
+pub fn regional_harmonic_170(GeoPoint) -> Double
+
+pub fn regional_harmonic_171(GeoPoint) -> Double
+
+pub fn regional_harmonic_172(GeoPoint) -> Double
+
+pub fn regional_harmonic_173(GeoPoint) -> Double
+
+pub fn regional_harmonic_174(GeoPoint) -> Double
+
+pub fn regional_harmonic_175(GeoPoint) -> Double
+
+pub fn regional_harmonic_176(GeoPoint) -> Double
+
+pub fn regional_harmonic_177(GeoPoint) -> Double
+
+pub fn regional_harmonic_178(GeoPoint) -> Double
+
+pub fn regional_harmonic_179(GeoPoint) -> Double
+
+pub fn regional_harmonic_180(GeoPoint) -> Double
+
+pub fn regional_harmonic_181(GeoPoint) -> Double
+
+pub fn regional_harmonic_182(GeoPoint) -> Double
+
+pub fn regional_harmonic_183(GeoPoint) -> Double
+
+pub fn regional_harmonic_184(GeoPoint) -> Double
+
+pub fn regional_harmonic_185(GeoPoint) -> Double
+
+pub fn regional_harmonic_186(GeoPoint) -> Double
+
+pub fn regional_harmonic_187(GeoPoint) -> Double
+
+pub fn regional_harmonic_188(GeoPoint) -> Double
+
+pub fn regional_harmonic_189(GeoPoint) -> Double
+
+pub fn regional_harmonic_190(GeoPoint) -> Double
+
+pub fn regional_harmonic_191(GeoPoint) -> Double
+
+pub fn regional_harmonic_192(GeoPoint) -> Double
+
+pub fn regional_harmonic_193(GeoPoint) -> Double
+
+pub fn regional_harmonic_194(GeoPoint) -> Double
+
+pub fn regional_harmonic_195(GeoPoint) -> Double
+
+pub fn regional_harmonic_196(GeoPoint) -> Double
+
+pub fn regional_harmonic_197(GeoPoint) -> Double
+
+pub fn regional_harmonic_198(GeoPoint) -> Double
+
+pub fn regional_harmonic_199(GeoPoint) -> Double
+
+pub fn regional_harmonic_200(GeoPoint) -> Double
+
+pub fn regional_harmonic_201(GeoPoint) -> Double
+
+pub fn regional_harmonic_202(GeoPoint) -> Double
+
+pub fn regional_harmonic_203(GeoPoint) -> Double
+
+pub fn regional_harmonic_204(GeoPoint) -> Double
+
+pub fn regional_harmonic_205(GeoPoint) -> Double
+
+pub fn regional_harmonic_206(GeoPoint) -> Double
+
+pub fn regional_harmonic_207(GeoPoint) -> Double
+
+pub fn regional_harmonic_208(GeoPoint) -> Double
+
+pub fn regional_harmonic_209(GeoPoint) -> Double
+
+pub fn regional_harmonic_210(GeoPoint) -> Double
+
+pub fn regional_harmonic_211(GeoPoint) -> Double
+
+pub fn regional_harmonic_212(GeoPoint) -> Double
+
+pub fn regional_harmonic_213(GeoPoint) -> Double
+
+pub fn regional_harmonic_214(GeoPoint) -> Double
+
+pub fn regional_harmonic_215(GeoPoint) -> Double
+
+pub fn regional_harmonic_216(GeoPoint) -> Double
+
+pub fn regional_harmonic_217(GeoPoint) -> Double
+
+pub fn regional_harmonic_218(GeoPoint) -> Double
+
+pub fn regional_harmonic_219(GeoPoint) -> Double
+
+pub fn regional_harmonic_220(GeoPoint) -> Double
+
+pub fn regional_harmonic_221(GeoPoint) -> Double
+
+pub fn regional_harmonic_222(GeoPoint) -> Double
+
+pub fn regional_harmonic_223(GeoPoint) -> Double
+
+pub fn regional_harmonic_224(GeoPoint) -> Double
+
+pub fn regional_harmonic_225(GeoPoint) -> Double
+
+pub fn regional_harmonic_226(GeoPoint) -> Double
+
+pub fn regional_harmonic_227(GeoPoint) -> Double
+
+pub fn regional_harmonic_228(GeoPoint) -> Double
+
+pub fn regional_harmonic_229(GeoPoint) -> Double
+
+pub fn regional_harmonic_230(GeoPoint) -> Double
+
+pub fn regional_harmonic_231(GeoPoint) -> Double
+
+pub fn regional_harmonic_232(GeoPoint) -> Double
+
+pub fn regional_harmonic_233(GeoPoint) -> Double
+
+pub fn regional_harmonic_234(GeoPoint) -> Double
+
+pub fn regional_harmonic_235(GeoPoint) -> Double
+
+pub fn regional_harmonic_236(GeoPoint) -> Double
+
+pub fn regional_harmonic_237(GeoPoint) -> Double
+
+pub fn regional_harmonic_238(GeoPoint) -> Double
+
+pub fn regional_harmonic_239(GeoPoint) -> Double
+
+pub fn regional_harmonic_240(GeoPoint) -> Double
+
+pub fn regional_harmonic_241(GeoPoint) -> Double
+
+pub fn regional_harmonic_242(GeoPoint) -> Double
+
+pub fn regional_harmonic_243(GeoPoint) -> Double
+
+pub fn regional_harmonic_244(GeoPoint) -> Double
+
+pub fn regional_harmonic_245(GeoPoint) -> Double
+
+pub fn regional_harmonic_246(GeoPoint) -> Double
+
+pub fn regional_harmonic_247(GeoPoint) -> Double
+
+pub fn regional_harmonic_248(GeoPoint) -> Double
+
+pub fn regional_harmonic_249(GeoPoint) -> Double
+
+pub fn regional_harmonic_250(GeoPoint) -> Double
+
+pub fn regional_harmonic_251(GeoPoint) -> Double
+
+pub fn regional_harmonic_252(GeoPoint) -> Double
+
+pub fn regional_harmonic_253(GeoPoint) -> Double
+
+pub fn regional_harmonic_254(GeoPoint) -> Double
+
+pub fn regional_harmonic_255(GeoPoint) -> Double
+
+pub fn regional_harmonic_256(GeoPoint) -> Double
+
+pub fn regional_harmonic_257(GeoPoint) -> Double
+
+pub fn regional_harmonic_258(GeoPoint) -> Double
+
+pub fn regional_harmonic_259(GeoPoint) -> Double
+
+pub fn regional_harmonic_260(GeoPoint) -> Double
+
+pub fn regional_harmonic_261(GeoPoint) -> Double
+
+pub fn regional_harmonic_262(GeoPoint) -> Double
+
+pub fn regional_harmonic_263(GeoPoint) -> Double
+
+pub fn regional_harmonic_264(GeoPoint) -> Double
+
+pub fn regional_harmonic_265(GeoPoint) -> Double
+
+pub fn regional_harmonic_266(GeoPoint) -> Double
+
+pub fn regional_harmonic_267(GeoPoint) -> Double
+
+pub fn regional_harmonic_268(GeoPoint) -> Double
+
+pub fn regional_harmonic_269(GeoPoint) -> Double
+
+pub fn regional_harmonic_270(GeoPoint) -> Double
+
+pub fn regional_harmonic_271(GeoPoint) -> Double
+
+pub fn regional_harmonic_272(GeoPoint) -> Double
+
+pub fn regional_harmonic_273(GeoPoint) -> Double
+
+pub fn regional_harmonic_274(GeoPoint) -> Double
+
+pub fn regional_harmonic_275(GeoPoint) -> Double
+
+pub fn regional_harmonic_276(GeoPoint) -> Double
+
+pub fn regional_harmonic_277(GeoPoint) -> Double
+
+pub fn regional_harmonic_278(GeoPoint) -> Double
+
+pub fn regional_harmonic_279(GeoPoint) -> Double
+
+pub fn regional_harmonic_280(GeoPoint) -> Double
+
+pub fn regional_harmonic_281(GeoPoint) -> Double
+
+pub fn regional_harmonic_282(GeoPoint) -> Double
+
+pub fn regional_harmonic_283(GeoPoint) -> Double
+
+pub fn regional_harmonic_284(GeoPoint) -> Double
+
+pub fn regional_harmonic_285(GeoPoint) -> Double
+
+pub fn regional_harmonic_286(GeoPoint) -> Double
+
+pub fn regional_harmonic_287(GeoPoint) -> Double
+
+pub fn regional_harmonic_288(GeoPoint) -> Double
+
+pub fn regional_harmonic_289(GeoPoint) -> Double
+
+pub fn regional_harmonic_290(GeoPoint) -> Double
+
+pub fn regional_harmonic_291(GeoPoint) -> Double
+
+pub fn regional_harmonic_292(GeoPoint) -> Double
+
+pub fn regional_harmonic_293(GeoPoint) -> Double
+
+pub fn regional_harmonic_294(GeoPoint) -> Double
+
+pub fn regional_harmonic_295(GeoPoint) -> Double
+
+pub fn regional_harmonic_296(GeoPoint) -> Double
+
+pub fn regional_harmonic_297(GeoPoint) -> Double
+
+pub fn regional_harmonic_298(GeoPoint) -> Double
+
+pub fn regional_harmonic_299(GeoPoint) -> Double
+
+pub fn regional_harmonic_300(GeoPoint) -> Double
+
+pub fn rms(ArrayView[Double]) -> Double
+
+pub fn rotate_horizontal(Vector3, Double) -> Vector3
+
+pub fn sample_summary(ArrayView[FieldSample]) -> Summary
 
 pub fn samples_to_csv(ArrayView[FieldSample]) -> String
 
 pub fn samples_to_geojson(ArrayView[FieldSample]) -> String
 
+pub fn second_difference(ArrayView[Double]) -> Array[Double]
+
+pub fn signed_angle_difference_deg(Double, Double) -> Double
+
+pub fn summary(ArrayView[Double]) -> Summary
+
+pub fn unwrap_longitudes(ArrayView[GeoPoint]) -> Array[GeoPoint]
+
+pub fn valid_grid(Grid) -> Bool
+
+pub fn valid_latitude(Double) -> Bool
+
+pub fn valid_longitude(Double) -> Bool
+
+pub fn valid_model(SphericalHarmonicModel) -> Bool
+
+pub fn valid_point(GeoPoint) -> Bool
+
+pub fn valid_range(NumericRange) -> Bool
+
+pub fn valid_term(HarmonicTerm) -> Bool
+
+pub fn validate_samples(ArrayView[FieldSample]) -> Array[QualitySample]
+
+pub fn values_from_samples(ArrayView[FieldSample], policy? : MissingPolicy) -> Array[Double]
+
+pub fn vector_add(Vector3, Vector3) -> Vector3
+
+pub fn vector_magnitude(Vector3) -> Double
+
+pub fn vector_scale(Vector3, Double) -> Vector3
+
+pub fn vector_subtract(Vector3, Vector3) -> Vector3
+
+pub fn weighted_mean(ArrayView[Double], ArrayView[Double]) -> Double
+
+pub fn wgs84_flattening() -> Double
+
+pub fn wgs84_semimajor_m() -> Double
+
+pub fn wgs84_semiminor_m() -> Double
+
+pub fn z_score(Double, Double, Double) -> Double
+
 // Errors
 
 // Types and methods
+pub(all) struct CoefficientParseError {
+  line : Int
+  message : String
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ContourSegment {
+  start : GeoPoint
+  finish : GeoPoint
+  level : Double
+} derive(Eq, @debug.Debug)
+
 pub(all) struct FieldSample {
   point : GeoPoint
   value : Double
@@ -67,6 +2790,13 @@ pub(all) struct GeoPoint {
   elevation_m : Double
 } derive(Eq, @debug.Debug)
 
+pub(all) struct Gradient {
+  north_per_degree : Double
+  east_per_degree : Double
+  magnitude : Double
+  azimuth_deg : Double
+} derive(Eq, @debug.Debug)
+
 pub(all) struct Grid {
   origin_lat : Double
   origin_lon : Double
@@ -76,11 +2806,59 @@ pub(all) struct Grid {
   cols : Int
   values : Array[Double]
 } derive(Eq, @debug.Debug)
+pub fn Grid::aspect_degrees(Self, Int, Int) -> Double?
+pub fn Grid::cell(Self, Int, Int) -> GridCell?
+pub fn Grid::cells(Self) -> Array[GridCell]
+pub fn Grid::column(Self, Int) -> Array[Double]
+pub fn Grid::combine(Self, Self, (Double, Double) -> Double) -> Self?
+pub fn Grid::contains(Self, GeoPoint) -> Bool
+pub fn Grid::count_where(Self, (Double) -> Bool) -> Int
+pub fn Grid::difference(Self, Self) -> Self?
+pub fn Grid::extent(Self) -> GridExtent
+pub fn Grid::focal_max(Self, Int) -> Self
+pub fn Grid::focal_mean(Self, Int) -> Self
+pub fn Grid::focal_min(Self, Int) -> Self
+pub fn Grid::gradient(Self) -> Self
+pub fn Grid::gradient_at(Self, Int, Int) -> Gradient?
+pub fn Grid::hillshade(Self, Double) -> Self
 pub fn Grid::index(Self, Int, Int) -> Int?
+pub fn Grid::integral(Self) -> Double
 pub fn Grid::is_valid(Self) -> Bool
+pub fn Grid::laplacian(Self) -> Self
+pub fn Grid::laplacian_at(Self, Int, Int) -> Double?
+pub fn Grid::map(Self, (Double) -> Double) -> Self
+pub fn Grid::map_cells(Self, (GridCell) -> Double) -> Self
+pub fn Grid::mean_absolute(Self) -> Double
+pub fn Grid::min_max(Self) -> (Double, Double)
+pub fn Grid::nearest_cell(Self, GeoPoint) -> GridCell?
+pub fn Grid::normalize(Self) -> Self
+pub fn Grid::offset(Self, Double) -> Self
+pub fn Grid::point_at(Self, Int, Int) -> GeoPoint?
+pub fn Grid::replace_missing(Self, Double) -> Self
+pub fn Grid::row(Self, Int) -> Array[Double]
 pub fn Grid::sample_bilinear(Self, GeoPoint) -> Double?
 pub fn Grid::sample_nearest(Self, GeoPoint) -> Double?
+pub fn Grid::scale(Self, Double) -> Self
+pub fn Grid::slope_degrees(Self, Int, Int) -> Double?
+pub fn Grid::summary(Self) -> Summary
+pub fn Grid::threshold(Self, Double, Double, Double) -> Self
+pub fn Grid::transpose(Self) -> Self
 pub fn Grid::value_at(Self, Int, Int) -> Double?
+pub fn Grid::window(Self, Int, Int, Int) -> Array[Double]
+
+pub(all) struct GridCell {
+  row : Int
+  col : Int
+  point : GeoPoint
+  value : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct GridExtent {
+  min_lat : Double
+  max_lat : Double
+  min_lon : Double
+  max_lon : Double
+} derive(Eq, @debug.Debug)
 
 pub(all) struct HarmonicTerm {
   degree : Int
@@ -89,10 +2867,45 @@ pub(all) struct HarmonicTerm {
   sine : Double
 } derive(Eq, @debug.Debug)
 
+pub enum MissingPolicy {
+  SkipMissing
+  PreserveMissing
+  ReplaceWith(value~ : Double)
+} derive(Eq, @debug.Debug)
+
+pub(all) struct NumericRange {
+  minimum : Double
+  maximum : Double
+} derive(Eq, @debug.Debug)
+
 pub(all) struct ProfileSample {
   point : GeoPoint
   distance_m : Double
   value : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct ProfileSummary {
+  samples : Int
+  distance_m : Double
+  minimum : Double
+  maximum : Double
+  mean : Double
+  range : Double
+} derive(Eq, @debug.Debug)
+
+pub enum QualityFlag {
+  Good
+  Suspect
+  Missing
+  Invalid
+  Outlier
+} derive(Eq, @debug.Debug)
+
+pub(all) struct QualitySample {
+  sample : FieldSample
+  flag : QualityFlag
+  uncertainty : Double
+  source : String
 } derive(Eq, @debug.Debug)
 
 pub(all) struct SphericalHarmonicModel {
@@ -101,7 +2914,22 @@ pub(all) struct SphericalHarmonicModel {
   terms : Array[HarmonicTerm]
 } derive(Eq, @debug.Debug)
 
+pub(all) struct Summary {
+  count : Int
+  missing : Int
+  minimum : Double
+  maximum : Double
+  mean : Double
+  variance : Double
+  sum : Double
+} derive(Eq, @debug.Debug)
+
+pub(all) struct Vector3 {
+  x : Double
+  y : Double
+  z : Double
+} derive(Eq, @debug.Debug)
+
 // Type aliases
 
 // Traits
-
